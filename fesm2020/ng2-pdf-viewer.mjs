@@ -354,7 +354,7 @@ class PdfViewerComponent {
             .pipe(takeUntil(this.destroy$))
             .subscribe({
             next: (page) => {
-                const rotation = this._rotation || page.rotate;
+                const rotation = this._rotation + page.rotate;
                 const viewportWidth = page.getViewport({
                     scale: this._zoom,
                     rotation
